@@ -1,6 +1,6 @@
 # Comparison of Mobile App Development Frameworks
 
-![Native Main Screenshot](Screenshots/Native_Main.jpeg)
+<img src="Screenshots/Native_Main.jpeg" alt="Native Main Screenshot" width="400">
 
 A comprehensive comparative analysis project designed to evaluate the performance and hardware resource utilization of Native and Cross-Platform mobile application development approaches under the same test scenarios and workloads.
 
