@@ -1,268 +1,295 @@
-
-\# Comparison-of-mobile-app-development-frameworks 
-
-
+# Comparison of Mobile App Development Frameworks
 
 ![Native Main Screenshot](Screenshots/Native_Main.jpeg)
 
+A comprehensive comparative analysis project designed to evaluate the performance and hardware resource utilization of Native and Cross-Platform mobile application development approaches under the same test scenarios and workloads.
 
-A comprehensive comparative analysis framework designed to evaluate and determine the most efficient development approach for mobile software projects across Native and Cross-Platform technologies.
+The project compares **Native Android (Kotlin), Native iOS (Swift), Kotlin Multiplatform (KMP), Flutter, and React Native** using real-world mobile application scenarios. The evaluation focuses on CPU utilization, RAM consumption, FPS, and execution-time metrics.
 
+---
 
+## Features
 
-This project explores the performance, development processes, and hardware utilization differences between Native (Kotlin, Swift) and Cross-Platform (Kotlin Multiplatform, Flutter, React Native) frameworks based on real-world scenarios.
+### Multi-Framework Implementation
 
+The same benchmark scenarios are implemented using five different mobile development approaches:
 
+* Native Android — Kotlin
+* Native iOS — Swift / SwiftUI
+* Kotlin Multiplatform — Compose Multiplatform
+* Flutter
+* React Native
 
-\---
+### Real-World Test Scenarios
 
+The benchmark includes commonly used mobile application workloads:
 
+* Video playback
+* Audio playback
+* Map and navigation operations
+* File read and write operations
+* JSON data parsing
+* List rendering and scrolling
+* Hardware sensor access
 
-\## Features
+### Comprehensive Performance Evaluation
 
+The implementations are evaluated using the following metrics:
 
+* CPU utilization
+* Raw RAM consumption
+* Net RAM consumption
+* Frames per second (FPS)
+* Execution time for file I/O operations
+* Execution time for JSON deserialization
 
-\- Multi-Framework Implementation
+### Research-Oriented Structure
 
-&#x20; Identical test scenarios developed across five different mobile development architectures Native Android (Kotlin), Native iOS (Swift), Kotlin Multiplatform (KMP), Flutter, and React Native.
+The repository includes raw telemetry logs and detailed statistical summaries in Excel format to support reproducibility, academic analysis, and further evaluation.
 
-\- Real-World Test Scenarios
+---
 
-&#x20; Includes functionalities commonly used in modern mobile applications video and audio playback, map and navigation operations, file readwrite operations, JSON data parsing, list structures, and hardware sensor access.
+## Concept
 
-\- Comprehensive Performance Evaluation
+In mobile software development, accurate requirements analysis and the selection of an appropriate architectural approach are important factors affecting project duration, development cost, performance, and maintainability.
 
-&#x20; Enables precise comparison based on critical metrics
+The mobile application ecosystem is primarily shaped by the Android and iOS platforms. Depending on project requirements, developers may choose native development or cross-platform technologies. These approaches differ in areas such as runtime performance, development processes, resource utilization, maintenance requirements, and user experience.
 
-&#x20; - Processor (CPU) utilization
+This project presents a comparative evaluation of Native and Cross-Platform mobile application development approaches under the same test scenarios and workloads. The study examines CPU utilization, memory consumption, rendering performance, and execution times to provide an objective basis for evaluating the characteristics of different development approaches.
 
-&#x20; - Net and raw RAM consumption
+The project is intended to provide a practical reference for developers and researchers investigating mobile application architecture and framework selection.
 
-&#x20; - Frames per second (FPS)
+---
 
-&#x20; - Time-based metrics (average completion times for file IO and JSON deserialization)
+## Technologies
 
-\- Research-Oriented Structure
+### Mobile Development
 
-&#x20; Provides raw telemetry logs and detailed statistical summary sheets (Excel) for academic and analytical reviews.
+* **Native Android:** Kotlin
+* **Native iOS:** Swift, SwiftUI
+* **Cross-Platform:** Kotlin Multiplatform (KMP), Flutter, React Native
 
+### Data Analysis
 
+* Python
+* Pandas
+* Matplotlib
+* Microsoft Excel
 
-\---
+---
 
+## Project Structure
 
-
-\## Concept
-
-
-
-In mobile software development processes, the accurate analysis of requirements and the selection of an appropriate architecture are of critical importance in terms of project duration, cost, performance, and maintainability. Today, the mobile application development ecosystem is primarily shaped around the iOS and Android platforms, and developers prefer either native or cross-platform approaches depending on project requirements. Each approach has different advantages and limitations in terms of performance, development processes, maintenance costs, and user experience. 
-
-
-
-In this study, a comprehensive comparative analysis was conducted to determine the most efficient development approach for mobile software projects. Based on the findings, evaluations were made regarding which architectural approach is more suitable for different project requirements. The study aims to serve as a guiding reference for mobile software developers during the selection process.
-
-
-
-\---
-
-
-
-\## Technologies
-
-
-
-The project is built using the leading mobile development frameworks and data analysis tools
-
-
-
-\- Native Android Kotlin
-
-\- Native iOS Swift, SwiftUI
-
-\- Cross-Platform Kotlin Multiplatform (KMP), Flutter, React Native
-
-\- Data Analysis Python, Pandas, Matplotlib, Microsoft Excel
-
-
-
-\---
-
-
-
-\## Project Structure
-
-
-
-The repository is organized into four main directories to separate assets, raw dataresults, source codes, and visual documentation.
-
-
+The repository is organized into four main directories containing the required assets, benchmark data, source code, and screenshots.
 
 ```text
-
 NativeAndCrossPlatformPerformanceLab
-
 │
-
-├── Assets                 # Contains the RAR archive with JSONJPG files required for the tests
-
-├── Data and Results       # Detailed and summarized Excel benchmark results for Android \& iOS
-
-├── Projects               # Source codes for all 5 mobile frameworks
-
+├── Assets
+│   └── Required images and JSON test data
+│
+├── Data and Results
+│   └── Detailed and summarized Excel benchmark results
+│
+├── Projects
 │   ├── FlutterPerfLab
-
 │   ├── KotlinMultiPlatformPerfLab
-
 │   ├── NativeKotlinPerfLab
-
 │   ├── ReactNativePerfLab
-
 │   └── SwiftPerfLab
+│
+└── Screenshots
+    └── Application interface examples
+```
 
-└── Screenshots            # Application interface examples
+---
 
-Configuration \& Asset Setup
+# Configuration and Asset Setup
 
-To run the benchmark scenarios properly, you must configure the media assets and the Google Maps API Key.
+Before running the benchmark scenarios, the required media assets must be configured and a Google Maps API key must be provided for the map scenarios.
+
+## 1. Media Assets Setup
+
+Navigate to the `Assets` directory and extract the provided archive.
+
+The archive contains the required:
+
+* `.jpg` image files
+* `.json` data files
+
+### Video and Audio Files
+
+Due to repository file-size limitations, the video and audio files are not included in the repository.
+
+Provide:
+
+* A suitable 1080p video file
+* A suitable audio file
+
+Rename the files as follows:
+
+```text
+test_video_1080p.mp4
+test_audio_high.mp3
+```
+
+Copy the extracted image/JSON files together with the video and audio files into the corresponding asset/resource directories.
+
+### Native Kotlin
+
+```text
+NativeKotlinPerfLab/app/src/main/assets
+```
+
+### Swift
+
+```text
+SwiftPerfLab/Resources
+```
+
+### Kotlin Multiplatform
+
+```text
+KotlinMultiPlatformPerfLab/composeApp/src/androidMain/assets
+KotlinMultiPlatformPerfLab/composeApp/src/iosMain/resources
+```
+
+### Flutter
+
+```text
+FlutterPerfLab/assets
+```
+
+### React Native
+
+```text
+ReactNativePerfLab/src/assets
+```
+
+---
+
+## 2. Google Maps API Key Setup
+
+A Google Maps API key is required to run the map rendering benchmarks on Android.
+
+Obtain an API key through the **Google Maps Platform** and configure it in the Android-based projects.
+
+In the root directory of each Android-based project, check whether a `local.properties` file exists. If it does not exist, create one.
+
+Add the following property:
+
+```properties
+MAPS_API_KEY=YOUR_API_KEY_HERE
+```
+
+The property should be configured in:
+
+* Native Kotlin
+* Kotlin Multiplatform
+* Flutter (`android`)
+* React Native (`android`)
 
 
+---
 
-1\. Media Assets Setup
+# Usage
 
-Navigate to the Assets folder and extract the compressed RAR file. This archive contains the required .jpg images and .json files.
+## Running in Release Mode
 
+To obtain representative performance measurements, all benchmark applications should be built and executed in **Release Mode on physical devices**.
 
+The benchmark should not be run on an emulator or in Debug Mode when reproducing the reported measurements.
 
-Video \& Audio Files Due to file size limits, the video and audio files are not included in the repository. You must manually findprovide a video file and an audio file suitable for testing.
+---
 
+## 1. Flutter
 
+Navigate to the Flutter project directory and run:
 
-Rename your video file to test\_video\_1080p.mp4 and your audio file to test\_audio\_high.mp3.
-
-
-
-Copy all these files (the extracted JPGsJSONs + your MP4 + your MP3) and paste them into the exact assetresource paths for each project
-
-
-
-Native Kotlin ProjectsNativeKotlinPerfLabappsrcmainassets
-
-
-
-Swift ProjectsSwiftPerfLabResources
-
-
-
-KMP ProjectsKotlinMultiPlatformPerfLabcomposeAppsrcandroidMainassets \& iosMainresources
-
-
-
-Flutter ProjectsFlutterPerfLabassets
-
-
-
-React Native ProjectsReactNativePerfLabsrcassets
-
-
-
-2\. Google Maps API Key Setup
-
-For the map rendering benchmarks to work on Android platforms, a Google Maps API Key is required.
-
-
-
-Obtain an API Key from the Google Developer 
-
-
-
-In the root directory of the Android-based projects (Native Kotlin, KMP, Flutter's android folder, React Native's android folder), check for a local.properties file. If it does not exist, create it manually.
-
-
-
-Add the following line inside the local.properties file
-
-
-
-Properties
-
-MAPS\_API\_KEY=YOUR\_API\_KEY\_HERE
-
-Usage (Running in Release Mode)
-
-To ensure accurate performance profiling and metrics, all applications must be built and executed in Release Mode on physical devices.
-
-
-
-1\. Flutter
-
-Navigate to the Flutter project directory and run
-
-
-
-Bash
-
+```bash
 flutter run --release
+```
 
-2\. React Native
+---
 
-Navigate to the React Native directory. Start the app in release mode depending on the platform
+## 2. React Native
 
+Navigate to the React Native project directory.
 
+### Android
 
-Bash
-
+```bash
 npx react-native run-android --mode release
+```
 
-\# or for iOS
+### iOS
 
+```bash
 npx react-native run-ios --mode Release
+```
 
-3\. Native Kotlin (Android) \& Kotlin Multiplatform (KMP)
+---
 
-Using Android Studio
+## 3. Native Kotlin and Kotlin Multiplatform
 
+Using Android Studio:
 
+1. Open the `NativeKotlinPerfLab` or `KotlinMultiPlatformPerfLab` project.
+2. Open the **Build Variants** tool window.
+3. Change the active build variant from `debug` to `release`.
+4. Connect a physical Android device.
+5. Run the application.
 
-Open the project (NativeKotlinPerfLab or KotlinMultiPlatformPerfLab).
+For Kotlin Multiplatform, select the appropriate `composeApp` module when configuring the build variant.
 
+---
 
+## 4. Native Swift
 
-Open the Build Variants tool window (usually on the bottom left).
+Using Xcode:
 
+1. Open `SwiftPerfLab.xcodeproj` or the corresponding workspace.
+2. Go to **Product → Scheme → Edit Scheme**.
+3. Select **Run** from the left sidebar.
+4. Change the **Build Configuration** to `Release`.
+5. Connect a physical iPhone.
+6. Press **Cmd + R** to build and run the application.
 
+---
 
-Change the Active Build Variant for the app (or composeApp) module from debug to release.
+# Benchmark Scope
 
+The project evaluates the following scenarios across all five development approaches:
 
+| Scenario   | Native Android | Native iOS | KMP | Flutter | React Native |
+| ---------- | :------------: | :--------: | :-: | :-----: | :----------: |
+| Video      |        ✓       |      ✓     |  ✓  |    ✓    |       ✓      |
+| Audio      |        ✓       |      ✓     |  ✓  |    ✓    |       ✓      |
+| JSON       |        ✓       |      ✓     |  ✓  |    ✓    |       ✓      |
+| File Write |        ✓       |      ✓     |  ✓  |    ✓    |       ✓      |
+| File Read  |        ✓       |      ✓     |  ✓  |    ✓    |       ✓      |
+| Map        |        ✓       |      ✓     |  ✓  |    ✓    |       ✓      |
+| List       |        ✓       |      ✓     |  ✓  |    ✓    |       ✓      |
+| Sensor     |        ✓       |      ✓     |  ✓  |    ✓    |       ✓      |
 
-Press Run to deploy it to your physical device.
+---
 
+# Data and Results
 
+The `Data and Results` directory contains:
 
-4\. Native Swift (iOS)
+* Raw benchmark telemetry
+* Detailed statistical results
+* Summarized performance results
+* CPU measurements
+* Raw and net RAM measurements
+* FPS measurements
+* Execution-time measurements for applicable scenarios
 
-Using Xcode
+The results are provided in Excel format to facilitate further statistical analysis and visualization.
 
+---
 
+# License
 
-Open SwiftPerfLab.xcodeproj or .xcworkspace.
-
-
-
-Go to Product  Scheme  Edit Scheme (or press Cmd + ).
-
-
-
-Select Run from the left sidebar and change the Build Configuration to Release.
-
-
-
-Press Cmd + R to build and run on your physical iPhone.
-
-
-
-License
-
-This project is licensed under the MIT License.
-
+This project is licensed under the **MIT License**.
