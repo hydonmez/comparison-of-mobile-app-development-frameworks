@@ -1,0 +1,59 @@
+name: flutterperflab
+description: "Kotlin Multiplatform vs Flutter Benchmark Laboratory"
+publish_to: "none"
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.11.1 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # [UI & ICONS FOUNDATION]
+  # Hard-locked to prevent implicit updates during the benchmarking lifecycle.
+  cupertino_icons: 1.0.8
+
+  # [ROUTING & STATE MANAGEMENT]
+  # Ensuring stable lifecycle events for accurate Startup Time (T1) measurements.
+  go_router: 17.1.0
+  provider: 6.1.5+1
+
+  # [HARDWARE & SENSORS TELEMETRY]
+  # Native bridges for accessing accelerometer and gyroscope hardware buffers.
+  sensors_plus: 7.0.0
+  pedometer: 4.2.0
+
+  # [GEOSPATIAL RENDERING PARITY]
+  # Locked to 2.17.0 for optimal Pigeon interoperability and strict memory management parity.
+  google_maps_flutter: ^2.17.0
+
+  # [MEDIA PROCESSING PIPELINE]
+  just_audio: 0.10.5
+  video_player: 2.11.1
+  chewie: 1.13.0
+
+  # [I/O, SERIALIZATION & UTILITIES]
+  json_annotation: 4.11.0
+  path_provider: 2.1.5
+  share_plus: 12.0.1
+  intl: 0.20.2
+  permission_handler: 12.0.1
+  apple_maps_flutter: ^1.4.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: 6.0.0
+  build_runner: 2.13.1
+  json_serializable: 6.13.1
+
+flutter:
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the material Icons class.
+  uses-material-design: true
+
+  assets:
+    - assets/

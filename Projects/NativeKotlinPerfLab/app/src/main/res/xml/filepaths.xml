@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <!--
+        ExportManager'ın dosyaları nereye yazdığına göre bu path'ler kapsayıcı olmalı.
+        Tüm olası konumları ekliyoruz — hangisi kullanılıyorsa çalışır.
+    -->
+
+    <!-- context.filesDir altındaki her şey (ör: getFilesDir()/exports/) -->
+    <files-path name="internal_files" path="." />
+
+    <!-- context.cacheDir altındaki her şey -->
+    <cache-path name="cache" path="." />
+
+    <!-- context.getExternalFilesDir() altındaki her şey -->
+    <external-files-path name="external_files" path="." />
+
+    <!-- context.externalCacheDir altındaki her şey -->
+    <external-cache-path name="external_cache" path="." />
+</paths>

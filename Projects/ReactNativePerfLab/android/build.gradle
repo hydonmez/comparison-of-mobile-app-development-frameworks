@@ -1,0 +1,56 @@
+buildscript {
+    ext {
+        buildToolsVersion = "35.0.0"
+        
+        // [RUNTIME ENVIRONMENT PARITY]
+        // Synchronized precisely with the Native Android, KMP, and Flutter laboratories.
+        // minSdk 33 ensures modern ART GC utilization, Target 35 ensures OS-level execution equality.
+        minSdkVersion = 33
+        compileSdkVersion = 35
+        targetSdkVersion = 35
+        
+        ndkVersion = "27.1.12297006"
+        kotlinVersion = "2.1.20"
+    }
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        // [COMPILER PARITY ENFORCEMENT]
+        // Strictly locking Android Gradle Plugin (AGP) to 8.8.2.
+        // Prevents React Native from defaulting to older compilation toolchains.
+        classpath("com.android.tools.build:gradle:8.8.2")
+        classpath("com.facebook.react:react-native-gradle-plugin")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
+    }
+}
+
+apply plugin: "com.facebook.react.rootproject"
+
+// [GLOBAL DEPENDENCY RESOLUTION STRATEGY]
+// Identical to the Flutter laboratory rules to prevent "Dependency Drift".
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        maven { url("https://maven.pkg.jetbrains.space/public/p/compose/dev") }
+    }
+
+    configurations.all {
+        resolutionStrategy {
+            // [AndroidX Core Parity]
+            // Prevent downstream RN modules from requesting 1.17.0+ which crashes AGP 8.8.2
+            force("androidx.core:core:1.16.0")
+            force("androidx.core:core-ktx:1.16.0")
+
+            // [Kotlin Ecosystem Lockdown]
+            // Enforce strict Kotlin 2.1.20 parity across all React Native third-party modules.
+            eachDependency { details ->
+                if (details.requested.group == 'org.jetbrains.kotlin') {
+                    details.useVersion('2.1.20')
+                }
+            }
+        }
+    }
+}

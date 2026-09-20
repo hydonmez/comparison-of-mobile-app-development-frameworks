@@ -1,0 +1,12 @@
+Timestamp,CPU(%),Raw_RAM(MB),Net_RAM(MB),Battery(%),FPS,Thermal_State
+18:07:00,33.80,21.10,0.10,80.0,63,Nominal
+18:07:00,35.50,21.20,0.20,80.0,60,Nominal
+18:07:00,34.90,21.20,0.20,80.0,60,Nominal
+18:07:01,35.10,21.30,0.30,80.0,60,Nominal
+
+--- SUMMARY ---
+Metric,Average,StdDev,Min,Max
+CPU(%),34.82,0.73,33.80,35.50
+Raw_RAM(MB),21.20,0.08,21.10,21.30
+Net_RAM(MB),0.20,0.08,0.10,0.30
+FPS,60.75,1.50,60.00,63.00

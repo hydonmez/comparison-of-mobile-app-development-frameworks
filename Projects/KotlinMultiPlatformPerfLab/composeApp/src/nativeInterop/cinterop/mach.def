@@ -1,0 +1,3 @@
+
+headers = mach/mach.h mach/task_info.h mach/task.h mach/vm_statistics.h
+package = platform.mach
